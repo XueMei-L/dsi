@@ -28,33 +28,21 @@ export class ImperialLength {
         return this.num / unidadMetric.yardas /unidadM / unidadLonguitud.m;
     }
     setCMeter(unidadM:unidadMetric) {
-        return this.num * unidadM / unidadMetric.yardas / unidadLonguitud.cm;
+        return this.num / unidadMetric.yardas /unidadM / unidadLonguitud.cm;
     }
     setKMeter(unidadM:unidadMetric) {
-        return this.num * unidadM / unidadMetric.yardas / unidadLonguitud.km;
+        return this.num / unidadMetric.yardas /unidadM / unidadLonguitud.km;
     }
-
-    // setUnidad(unidad:unidadMetric) {
-    //     // convertir en yardas
-    //     return this.num * unidad / unidadMetric.yardas;
-    // }
-
-    // // ImperialLength - pulgadas, pies, yardas y millas.
-    // convertirM(unidad2:unidadLonguitud):number {
-    //     let resultLonguitud = unidadLonguitud.m / unidad2;
-    //     return resultLonguitud;
-    // }
 }
 
 /**
  * class Imperial
  */
 export class Imperial{
-    constructor(private data:unidadLonguitud) {
+    constructor(private num:number) {
     }
-
-    convertir() {
-
+    setMeter(unidadM:unidadMetric) {
+        return this.num / unidadMetric.yardas /unidadM / unidadLonguitud.m;
     }
 }
 
