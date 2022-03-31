@@ -21,9 +21,12 @@ enum unidadMetric {     pulgadas = 36,
 
 // centímetros, metros y kilómetros;
 export class ImperialLength {
-    constructor(protected num:number) {
+    constructor(private num:number) {
     }
 
+    getNumb() {
+        return this.num;
+    }
     setMeter(unidadM:unidadMetric) {
         return this.num / unidadMetric.yardas /unidadM / unidadLonguitud.m;
     }
@@ -44,17 +47,19 @@ export class Imperial{
     setMeter(unidadM:unidadMetric) {
         return this.num / unidadMetric.yardas /unidadM / unidadLonguitud.m;
     }
+    getNumber() {
+        return this.num;
+    }
 }
 
 /**
  * Class adapter
  */
-export class adapter{
+export class adapter extends ImperialLength{
     constructor(private imp:Imperial) {
-        // super();
+        super(imp.getNumber());
     }
     getValue(){
-        return this.imp.convertir();
     }
 }
 
@@ -64,7 +69,7 @@ imperialLength.setMeter(unidadMetric.pulgadas);
 console.log(imperialLength.setMeter(unidadMetric.pulgadas));
 console.log(imperialLength.setCMeter(unidadMetric.pulgadas));
 
-// const imperial = new Imperial(100);
-// console.log(adap.getValue());
+const imperial = new Imperial(100);
+// console.log(imperial.getValue());
 
-// const adap = new adapter(imperial);
+const adap = new adapter(imperial);
