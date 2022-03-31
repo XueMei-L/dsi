@@ -1,16 +1,14 @@
-# Practica 06: Clases e interfaces genéricas. Principios SOLID
+# Modificacion de dsi REPO propio
 
 ```
 >>  COMPONENTES: XueMei Lin
 >>  EMAIL:       alu0101225845@ull.edu.es
 >>  UNIVERSIDAD: Universidad de La Laguna
 >>  ASIGNATURA:  Desarrollo de sistemas informaticos
->>  VERSION:     0.0.6
->>  FECHA:       27-03-2022
+>>  VERSION:     0.0.7
+>>  FECHA:       31-03-2022
 >>  GITHUB:      https://github.com/XueMei-L
 ```
-
-Acceso a [GitHub Pages](https://ull-esit-inf-dsi-2122.github.io/ull-esit-inf-dsi-21-22-prct06-generics-solid-XueMei-L/)
 
 BADGE COVERALLS  
 
