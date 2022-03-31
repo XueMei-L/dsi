@@ -1,6 +1,6 @@
 import { RestType } from "typedoc";
+import { ImplementsPlugin } from "typedoc/dist/lib/converter/plugins";
 import { convert } from "typedoc/dist/lib/utils/options/declaration";
-import { Convertible } from "./isConvertible";
 
 /**
  * Funcion que calcula la unidad de longuitud
@@ -21,36 +21,62 @@ enum unidadMetric {     pulgadas = 36,
 
 // centímetros, metros y kilómetros;
 export class ImperialLength {
-    constructor(protected num:number, protected unidMetric:unidadMetric) {
+    constructor(protected num:number) {
     }
 
+    setMeter(unidadM:unidadMetric) {
+        return this.num / unidadMetric.yardas /unidadM / unidadLonguitud.m;
+    }
+    setCMeter(unidadM:unidadMetric) {
+        return this.num * unidadM / unidadMetric.yardas / unidadLonguitud.cm;
+    }
+    setKMeter(unidadM:unidadMetric) {
+        return this.num * unidadM / unidadMetric.yardas / unidadLonguitud.km;
+    }
+
+    // setUnidad(unidad:unidadMetric) {
+    //     // convertir en yardas
+    //     return this.num * unidad / unidadMetric.yardas;
+    // }
+
+    // // ImperialLength - pulgadas, pies, yardas y millas.
+    // convertirM(unidad2:unidadLonguitud):number {
+    //     let resultLonguitud = unidadLonguitud.m / unidad2;
+    //     return resultLonguitud;
+    // }
+}
+
+/**
+ * class Imperial
+ */
+export class Imperial{
+    constructor(private data:unidadLonguitud) {
+    }
+
+    convertir() {
+
+    }
+}
+
+/**
+ * Class adapter
+ */
+export class adapter{
+    constructor(private imp:Imperial) {
+        // super();
+    }
     getValue(){
-        return this.num * unidadLonguitud
-    }
-    // ImperialLength - pulgadas, pies, yardas y millas.
-    convertirM(unidad2:unidadLonguitud):number {
-        let resultUnidad = this.num * unidadMetric.yardas / this.unidMetric;
-        let resultLonguitud = resultUnidad / unidadLonguitud.m / unidad2;
-        return resultLonguitud;
+        return this.imp.convertir();
     }
 }
 
-export class Imperial
+// Instancias
+const imperialLength = new ImperialLength(1);
+imperialLength.setMeter(unidadMetric.pulgadas);
+console.log(imperialLength.setMeter(unidadMetric.pulgadas));
+console.log(imperialLength.setCMeter(unidadMetric.pulgadas));
 
+// const imperial = new Imperial(100);
+// console.log(adap.getValue());
 
-let a = new ImperialLength(1, unidadMetric.yardas);
-a.convertirM(unidadLonguitud.cm);
-console.log(a.convertirM(unidadLonguitud.cm));
-
-export class adapter extends ImperialLength {
-    constructor(private Imperial:Imperial) {
-        super();
-    }
-}
-
-
-// export class adapter extends ImperialLength {
-//     constructor(private num:number, private ImperialLength:ImperialLength) {
-//         super();
-//     }
-// }
+// const adap = new adapter(imperial);
