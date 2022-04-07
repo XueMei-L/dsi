@@ -5,7 +5,7 @@ import { ConcretePokemonCharizard } from "./concretePokemonCharizard"
 /**
  * Concreate Creators override the factory method with type ConcreteCreatorElectri
  */
-export class ConcreteCreatorCharizard extends Creator {
+export class ConcreteCreatorElectri extends Creator {
 
     constructor(private readonly name: string, private weight: number,
         private height: number, private type: string,
