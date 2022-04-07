@@ -19,12 +19,37 @@ describe('Tests for the modification', () => {
     });
 
 
-    // it('Charizard', () => {
-    //     expect(clientCode(fuegoCharizard)).to.eq("");
-    // });
+    it('Charizard name', () => {
+        expect(fuegoCharizard.factoryMethod().getName()).to.eq("charizard");
+    });
 
-    // it('Pikachu', () => {
-    //     expect(clientCode(electricPikachu)).to.eq("");
-    // });
+    
+    it('Charizard getweight', () => {
+        expect(fuegoCharizard.factoryMethod().getWeight()).to.eq(60);
+    });
+    
+    it('Charizard getheight', () => {
+        expect(fuegoCharizard.factoryMethod().getHeight()).to.eq(55);
+    });
+    
+    it('Charizard get attack', () => {
+        expect(fuegoCharizard.factoryMethod().getAttack()).to.eq(84);
+    });
+
+    it('Charizard getdefense', () => {
+        expect(fuegoCharizard.factoryMethod().getDefense()).to.eq(78);
+    });
+
+    it('Charizard getspeed', () => {
+        expect(fuegoCharizard.factoryMethod().getSpeed()).to.eq(100);
+    });
+
+    it('Charizard gethp', () => {
+        expect(fuegoCharizard.factoryMethod().getHP()).to.eq(78);
+    });
+
+    it('Charizard type', () => {
+        expect(fuegoCharizard.factoryMethod().getType()).to.eq("fire");
+    });
 
 });
