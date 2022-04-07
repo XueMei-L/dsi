@@ -2,6 +2,7 @@ import 'mocha';
 import { expect } from 'chai';
 import { ConcreteCreatorFuego, ConcreteCreatorElectri } from "../../src/eje1";
 import { clientCode } from "../../src/eje1";
+import { ConcreteCreatorCharizard, ConcreteProductPikachu} from "../../src/eje1";
 
 
 
@@ -10,6 +11,9 @@ describe('Tests for the modification', () => {
     const fuegoCharizard = new ConcreteCreatorFuego("charizard", 60, 55, "fire", [84, 78, 100, 78]);
     const electricPikachu = new ConcreteCreatorElectri("pikachu", 50, 45, "electric", [90, 55, 110, 60]);
 
+    const charizard = new ConcreteCreatorCharizard("charizard", 60, 55, "fire", [84, 78, 100, 78]);
+    const pikachu = new ConcreteProductPikachu("pikachu", 50, 45, "electric", [90, 55, 110, 60]);
+    
     it('Charizard', () => {
         expect(fuegoCharizard).not.to.be.null;
     });
@@ -17,13 +21,20 @@ describe('Tests for the modification', () => {
     it('pikachu', () => {
         expect(electricPikachu).not.to.be.null;
     });
+    
+    it('inst charizard', () => {
+        expect(charizard).not.to.be.null;
+    });
+    
+    it('inst pikachu', () => {
+        expect(pikachu).not.to.be.null;
+    });
 
 
     it('Charizard name', () => {
         expect(fuegoCharizard.factoryMethod().getName()).to.eq("charizard");
     });
 
-    
     it('Charizard getweight', () => {
         expect(fuegoCharizard.factoryMethod().getWeight()).to.eq(60);
     });
